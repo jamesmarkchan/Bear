@@ -7,26 +7,24 @@ API_PORT = 30010 # 30010 is default Unreal Remote Control API port
 UNREAL_API_URL = f"http://127.0.0.1:{API_PORT}/remote/object/call"
 
 def trigger_unreal_screenshot():
-    # 1. Create directory if it doesn't exist
-    #save_dir = "C:/UnrealCaptures"
 
+    # Determine Save Directory
     script_dir = os.path.dirname(os.path.abspath(__file__))
     project_root = os.path.dirname(script_dir) 
     save_dir = os.path.join(project_root, "Saved", "Screenshots").replace("\\", "/")
-
+    # Create directory if it doesn't exist
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
 
-    # 2. Generate Timestamped Filename
+    # Generate Timestamped Filename
     timestamp = datetime.now().strftime("%m%d-%H%M%S")
     filename = f"{timestamp}_capture.png"
     
     # Use forward slashes for Unreal console commands
     save_path = os.path.join(save_dir, filename).replace("\\", "/")
 
-    # Note options for HighResShot: are 1920x1080, 1, 2
-
-    # 3. Prepare the Payload
+    # Prepare the Payload
+    # Note: options for HighResShot: are 1920x1080, 1, 2
     # Note: access='READ_ACCESS' is sometimes required depending on engine version
     payload = {
         "objectPath": "/Script/Engine.Default__KismetSystemLibrary",

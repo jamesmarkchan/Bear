@@ -1,23 +1,36 @@
-*.user
-*.suo
 
-.vs/
+# unreal engine
 Binaries/
 Intermediate/
 DerivedDataCache/
 Saved/
+Build/
 
+# Visual Studio
+.vs/
 bin/
 obj/
 x64/
 Debug/
 Release/
-
+packages/
+*.user
+*.suo
+*.log
+# VS IntelliSense files
 *.ncb
 *.sdf
 *.ipch
 
-packages/
+# Visual Studio Code
+.vscode/
 
-*.sln
-*.log
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# OS generated
+.DS_Store
+Thumbs.db
