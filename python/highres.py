@@ -31,6 +31,7 @@ def trigger_unreal_screenshot():
         "functionName": "ExecuteConsoleCommand",
         "parameters": {
             "Command": f'HighResShot 1 filename="{save_path}"',
+            #note: omission of filename param generates capture in `Saved/Screenshots/WindowsEditor`
             #"Command": f'HighResShot 1',
             "SpecificPlayer": None
         },
